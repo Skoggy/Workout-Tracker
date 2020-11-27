@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { 
 
 
 require("./routes/html.js")(app);
-
+require("./routes/api.js")(app);
 // Start the server
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
