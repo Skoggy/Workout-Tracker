@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { 
 
 
 
-
+require("./routes/html.js")(app);
 
 // Start the server
 app.listen(PORT, () => {
