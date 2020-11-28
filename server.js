@@ -15,13 +15,18 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { useNewUrlParser: true });
+
+//require("./seeders/seed.js")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workouts",
+    { useNewUrlParser: true },
+    { useUnifiedTopology: true });
 
 
 
+require("./routes/html-routes.js")(app)
+require('./routes/api-routes')(app)
 
-require("./routes/html.js")(app);
-require("./routes/api.js")(app);
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
