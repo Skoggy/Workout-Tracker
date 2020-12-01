@@ -2,7 +2,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 const db = require("./models");
 
@@ -17,7 +17,7 @@ app.use(express.static("public"));
 
 
 //require("./seeders/seed.js")
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workouts",
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
     { useNewUrlParser: true },
     { useUnifiedTopology: true });
 
