@@ -34,11 +34,11 @@ module.exports = (app) => {
             });
     });
 
-    app.put("/api/workouts/:id", ({ body }, res) => {
+    app.put("/api/workouts/:id", (req, res) => {
         db.Workout.update({
-            _id: mongojs.ObjectID(body.params.id)
+            _id: mongojs.ObjectID(req.params.id)
         },
-            { $push: { excercises: body } },
+            { $push: { exercises: req.body } },
             { new: true })
             .then(dbWorkouts => {
                 res.json(dbWorkouts);
