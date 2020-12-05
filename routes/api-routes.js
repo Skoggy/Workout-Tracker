@@ -2,17 +2,7 @@ const mongojs = require("mongojs");
 const db = require('../models')
 
 
-//const populate = require("../seeders/seed.js")
 
-
-//router.get("/populated", (req, res) => {
-//   db.Workout.find({}).populate(populate).then(dbWorkout => {
-//       res.json(dbWorkout)
-//  }
-//  ).catch(err => {
-/////      res.json(err)
-//  })
-//})
 
 module.exports = (app) => {
     app.get("/api/workouts", (req, res) => {

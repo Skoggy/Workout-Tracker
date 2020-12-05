@@ -17,7 +17,7 @@ app.use(express.static("public"));
 
 
 //require("./seeders/seed.js")
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://Skoggy:c67V3ktX0NWHsfWg@fitnesstracker.qp9qq.mongodb.net/sample_mflix?retryWrites=true&w=majority",
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
     { useNewUrlParser: true },
     { useUnifiedTopology: true });
 
