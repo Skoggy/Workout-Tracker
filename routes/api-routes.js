@@ -1,5 +1,5 @@
 const mongojs = require("mongojs");
-const db = require('../models/Workout')
+const db = require('../models')
 
 
 
