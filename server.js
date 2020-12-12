@@ -17,10 +17,17 @@ app.use(express.static("public"));
 
 
 //require("./seeders/seed.js")
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
-    { useNewUrlParser: true },
-    { useUnifiedTopology: true });
-
+//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
+// { useNewUrlParser: true },
+//  { useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    }
+);
 
 
 require("./routes/html-routes.js")(app)
